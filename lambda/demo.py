@@ -8,6 +8,10 @@ def lambda_handler(event, context):
       message = json.loads(event['Records'][0]['body'])
       number1 = message['Number1']
       number2 = message['Number2']
+   elif 'body' in event:
+      message = json.loads(event['body'])
+      number1 = message['Number1']
+      number2 = message['Number2']
    else:
       number1 = event['Number1']
       number2 = event['Number2']
